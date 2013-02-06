@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hello world!
-category: default
+category: discovery
 ---
 
 努力打造高端文艺青年
