@@ -11,14 +11,22 @@ desc: 有家咖啡馆叫阿曹的曹
 
 custom:
     category:
-        default: Default Category
-        another: Another Category
+        thinking: 思考总结
+        problems: 问题记录
+        knowledge: 知识经验
+        discovery: 新的发现
     categories:
-      - name:  default
-        title: Default Category
+      - name: thinking
+        title: 思考总结
 
-      - name:  another
-        title: Another Category
+      - name: problems
+        title: 问题记录
+
+      - name: knowledge
+        title: 知识经验
+
+      - name: discovery
+        title: 新的发现
 
 meta:
     author:
