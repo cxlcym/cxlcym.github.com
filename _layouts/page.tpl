@@ -91,7 +91,7 @@ site.TPL_SEARCH_TITLE = '#{0} / 搜索：#{1}';
 <script type="text/javascript">
 var jiathis_config = {data_track_clickback:'true'};
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?btn=r2.gif&amp;uid=1344352160442869" charset="utf-8"></script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?move=0&amp;btn=r2.gif&amp;uid=1344352160442869" charset="utf-8"></script>
 <!-- JiaThis Button END -->
 
 </body>
