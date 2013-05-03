@@ -12,10 +12,15 @@ category: default
 之前在很windows下使用github很不方便，后来优化了，推送的什么的用代码就可以了，不久前github推出了在windows平台下使用的软件，http://windows.github.com/
 
 1.下载安装，设置自己的账户等，吧啦吧啦......界面是极简风格的，很一目了然。
-![](/image/001.png)
+
+
 2.打开自己的仓库，点击Clone in windows 就行，
-![](/image/002.png)
+![](/image/001.png)
+
+
 3.你的仓库会clone到本地，在本地就可以进行各种添加修改，完毕后在软件的上部点击insync
+![](/image/002.png)
+
 同步之后就可以啦，大大减轻了之前个各种麻烦。
 
 
