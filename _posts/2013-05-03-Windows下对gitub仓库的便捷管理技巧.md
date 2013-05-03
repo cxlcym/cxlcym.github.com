@@ -15,10 +15,12 @@ category: default
 
 
 2.打开自己的仓库，点击Clone in windows 就行，
+
 ![](/image/001.png)
 
 
 3.你的仓库会clone到本地，在本地就可以进行各种添加修改，完毕后在软件的上部点击insync
+
 ![](/image/002.png)
 
 同步之后就可以啦，大大减轻了之前个各种麻烦。
