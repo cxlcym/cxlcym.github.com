@@ -11,17 +11,17 @@ desc: 有家咖啡馆叫阿曹的曹
 
 custom:
     category:
-        生活: 生活
-        笔记: 笔记
-        其它: 其它
+        life: 生活
+        note: 笔记
+        other：其它 
     categories:
-      - name:  生活
+      - name:  life
         title: 生活
 
-      - name:  笔记
-        title: 笔记
+      - name:  note
+        title: 笔记 
 
-      - name:  其它
+      - name:  other
         title: 其它
 meta:
     author:

@@ -1,7 +1,7 @@
----
+﻿---
 layout: post
 title: Hello world!
-category: 其它
+category: other
 ---
 
 努力打造高端文艺青年

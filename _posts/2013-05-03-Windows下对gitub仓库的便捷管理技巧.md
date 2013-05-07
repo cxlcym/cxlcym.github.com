@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 title: Windows下对gitub仓库的便捷管理技巧
-category: 其它
+category: other
 ---
 # Windows下对gitub仓库的便捷管理技巧 #
 
