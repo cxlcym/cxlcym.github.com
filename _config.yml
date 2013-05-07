@@ -1,4 +1,4 @@
-﻿markdown: kramdown
+markdown: kramdown
 pygments: true
 safe: false
 permalink: /posts/:title.html
@@ -11,18 +11,14 @@ desc: 有家咖啡馆叫阿曹的曹
 
 custom:
     category:
-        life: 生活
-        note: 笔记
-        other：其它 
+        default: To Life
+        another: Another 
     categories:
-      - name:  life
-        title: 生活
+      - name:  default
+        title: To Life
 
-      - name:  note
-        title: 笔记 
-
-      - name:  other
-        title: 其它
+      - name:  another
+        title: Another 
 meta:
     author:
         name: Cao xilong
