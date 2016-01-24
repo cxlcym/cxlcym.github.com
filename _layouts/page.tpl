@@ -23,7 +23,7 @@
 </div>
 
 <aside>
-	<p calss="p1">Now or Never<a href="/feed.xml" class="feed-link" title="Subscribe"><img src="/image/RSS.png" alt="RSS feed" /></a>		<a href="https://github.com/{{ site.meta.author.github }}"><img src="/image/github_72px.png" alt="Fork me on GitHub"></a></p>
+	<p style="color:#c15a5b; font size= 40px">Now or Never<a href="/feed.xml" class="feed-link" title="Subscribe"><img src="/image/RSS.png" alt="RSS feed" /></a>		<a href="https://github.com/{{ site.meta.author.github }}"><img src="/image/github_72px.png" alt="Fork me on GitHub"></a></p>
 	
 	<nav class="block">
 		<ul>
@@ -51,21 +51,19 @@
 		<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank" class="hide-target-icon" title="Copyright declaration of site content"><img alt="知识共享许可协议" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a></p>
 	</div>
 	
-	{% if site.meta.author.github %}
-	<div >
-		<img style="position: absolute; left: 50px; right:50px;src="/image/lovelife.jpg" alt="love life"></a>
-	</div>
-	{% endif %}
+
 	
 	<div class="block block-thank">
 		<h3>Powered by <a href="http://cxlcym.github.io/" target="_blank">Jack Cao</a></h3>
 		<p>Based on
 			<a href="https://github.com/mytharcher/SimpleGray" target="_blank">SimpleGray</a>
-		</p>
-	</div>
+        <br/>
+            <img style="position: absolute; left: 50px; right:50px;src="/image/lovelife.jpg" alt="love life"></a>
+		</p> 
+	
 </aside>
 
-<script src="http://elfjs.googlecode.com/files/elf-0.4.1-min.js"></script>
+<script src="http://elfjs.googlecode.com/files/elf-0.4.1-min.js"></script> 
 <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
 
 <script src="/assets/js/site.js"></script>
