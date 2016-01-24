@@ -35,7 +35,7 @@
 	
 	<form action="/search/" class="block block-search">
 		<h3>Search</h3>
-		<p><input type="search" name="q" placeholder="Search" /></p>
+		<p><input type="search" name="q" placeholder="搜索一下下" /></p>
 	</form>
 	
 	<div class="block block-about">
@@ -57,7 +57,7 @@
 	
 	<div class="block block-thank">
         <h3>Powered by <a href="http://cxlcym.github.io/" target="_blank">Jack Cao 4.5</a></h3>
-        <h4>Based on <a href="https://github.com/mytharcher/SimpleGray" target="_blank">SimpleGray</a></h4> 
+        <h3>Based on <a href="https://github.com/mytharcher/SimpleGray" target="_blank">SimpleGray</a></h3> 
 	
 </aside>
 

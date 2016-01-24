@@ -11,8 +11,8 @@ header{font-size:80%;}
 header h1 .minor{color:#000000; font-weight:normal;}
 header .additional{font-size:90%; color:#2a333c;}
 
-.main{position:relative; zoom:1; width:62%; padding:2em 3em;}
-aside{position:fixed; left:62%; top:0; right:0; height:100%; overflow:hidden; padding:2em 3em; background:#2a333c; box-shadow:5px 0 5px RGB(255,255,255.1) inset; font-size:75%;}
+.main{position:relative; zoom:1; width:75%; padding:2em 3em;}
+aside{position:fixed; left:73%; top:0; right:0; height:100%; overflow:hidden; padding:2em 3em; background:#2a333c; box-shadow:5px 0 5px RGB(255,255,255.1) inset; font-size:75%;}
 aside h2{margin:1em 0;}
 aside .feed-link{margin-left:0.5em;}
 aside nav ul{list-style:none; line-height:1.5em;}
