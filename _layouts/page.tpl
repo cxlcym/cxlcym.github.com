@@ -23,8 +23,11 @@
 </div>
 
 <aside>
-	<H1 style="color:#c15a5b">Now or Never<a href="/feed.xml" class="feed-link" title="Subscribe"><img src="/image/RSS.png" alt="RSS feed" /></a>		<a href="https://github.com/{{ site.meta.author.github }}"><img src="/image/github_72px.png" alt="Fork me on GitHub"></a></H1>
-	
+	<H1 style="color:#c15a5b";font-size="200">Now or Never<a href="/feed.xml" class="feed-link" title="Subscribe"><img src="/image/RSS.png" alt="RSS feed" /></a>		<a href="https://github.com/{{ site.meta.author.github }}"><img src="/image/github_72px.png" alt="Fork me on GitHub"></a></H1>
+	<p>
+            <img src="/image/lovelife.jpg" alt="love life"></a>
+    </p>
+    
 	<nav class="block">
 		<ul>
 		{% for category in site.custom.categories %}<li class="{{ category.name }}"><a href="/category/{{ category.name }}/">{{ category.title }}</a></li>
@@ -43,7 +46,9 @@
 			{% if site.meta.author.gravatar %}<img src="{{ site.meta.gravatar}}{{ site.meta.author.gravatar }}?s=48" />{% endif %}
 			<p><strong>{{ site.meta.author.name }}</strong></p>
 		</figure>
-		<p>心中的标准决定了可能达成的上限.</p>
+		<p>厚积薄发</p>
+        <p>Lamborghini</p>
+        <p>心中的标准决定了可能达成的上限</p>
 	</div>
 	
 	<div class="block block-license">
@@ -54,11 +59,9 @@
 
 	
 	<div class="block block-thank">
-		<h3>Powered by <a href="http://cxlcym.github.io/" target="_blank">Jack Cao</a></h3>
+		<h3>Powered by <a href="http://cxlcym.github.io/" target="_blank">Jack Cao 4.5</a></h3>
 		<h4>Based on
 			<a href="https://github.com/mytharcher/SimpleGray" target="_blank">SimpleGray</a>
-        <br/>
-            <img margin:10px 0px 10px 10px; src="/image/lovelife.jpg" alt="love life"></a>
 		</h4> 
 	
 </aside>
