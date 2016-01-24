@@ -45,7 +45,6 @@
 			<p><strong>{{ site.meta.author.name }}</strong></p>
 		</figure>
 		<p>厚积薄发</p>
-        <p>Lamborghini</p>
         <p>心中的标准决定了可能达成的上限</p>
 	</div>
 	
@@ -57,10 +56,9 @@
 
 	
 	<div class="block block-thank">
-		<h3>Powered by <a href="http://cxlcym.github.io/" target="_blank">Jack Cao 4.5</a></h3>
-		<h4>Based on
-			<a href="https://github.com/mytharcher/SimpleGray" target="_blank">SimpleGray</a>
-		</h4> 
+		<h3>Powered by <a href="http://cxlcym.github.io/" target="_blank">Jack Cao 4.5</a>Based on
+        <a href="https://github.com/mytharcher/SimpleGray" target="_blank">SimpleGray</a>
+		</h3> 
 	
 </aside>
 
