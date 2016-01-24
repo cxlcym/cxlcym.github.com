@@ -23,7 +23,7 @@
 </div>
 
 <aside>
-	<h2><a href="/">{{ site.name }}</a><a href="/feed.xml" class="feed-link" title="Subscribe"><img src="/image/RSS.png" alt="RSS feed" /></a>		<a href="https://github.com/{{ site.meta.author.github }}"><img src="/image/github_72px.png" alt="Fork me on GitHub"></a></h2>
+	<p calss="p1">Now or Never<a href="/feed.xml" class="feed-link" title="Subscribe"><img src="/image/RSS.png" alt="RSS feed" /></a>		<a href="https://github.com/{{ site.meta.author.github }}"><img src="/image/github_72px.png" alt="Fork me on GitHub"></a></p>
 	
 	<nav class="block">
 		<ul>
@@ -41,7 +41,7 @@
 		<h3>About</h3>
 		<figure>
 			{% if site.meta.author.gravatar %}<img src="{{ site.meta.gravatar}}{{ site.meta.author.gravatar }}?s=48" />{% endif %}
-			<figcaption><strong>{{ site.meta.author.name }}</strong></figcaption>
+			<p><strong>{{ site.meta.author.name }}</strong></p>
 		</figure>
 		<p>心中的标准决定了可能达成的上限.</p>
 	</div>

@@ -6,6 +6,7 @@ a:hover{text-decoration:underline;}
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{margin:0;}
 img{border:0;}
 input,textarea{resize:none;}
+p.p1{font-size:20px;color:#c15a5b;}
 
 header{font-size:80%;}
 header h1 .minor{color:#000000; font-weight:normal;}
