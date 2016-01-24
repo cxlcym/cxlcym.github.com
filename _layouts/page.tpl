@@ -52,8 +52,8 @@
 	</div>
 	
 	{% if site.meta.author.github %}
-	<div class="block block-search">
-		<img src="/image/lovelife.jpg" alt="love life"></a>
+	<div >
+		<img style="position: absolute; left: 50px; right:50px;src="/image/lovelife.jpg" alt="love life"></a>
 	</div>
 	{% endif %}
 	
