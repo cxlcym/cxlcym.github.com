@@ -23,7 +23,7 @@
 </div>
 
 <aside>
-    <img src="/image/lovelife.jpg" alt="love life">
+    <img align="middle" src="/image/lovelife.jpg" alt="love life">
 	<H1 style="color:#c15a5b";font-size="200">Now or Never<a href="/feed.xml" class="feed-link" title="Subscribe"><img src="/image/RSS.png" alt="RSS feed" /></a>		<a href="https://github.com/{{ site.meta.author.github }}"><img src="/image/github_72px.png" alt="Fork me on GitHub"></a></H1>
     
 	<nav class="block">
@@ -56,9 +56,8 @@
 
 	
 	<div class="block block-thank">
-		<h3>Powered by <a href="http://cxlcym.github.io/" target="_blank">Jack Cao 4.5</a>Based on
-        <a href="https://github.com/mytharcher/SimpleGray" target="_blank">SimpleGray</a>
-		</h3> 
+        <h3>Powered by <a href="http://cxlcym.github.io/" target="_blank">Jack Cao 4.5</a></h3>
+        <h4>Based on <a href="https://github.com/mytharcher/SimpleGray" target="_blank">SimpleGray</a></h4> 
 	
 </aside>
 
