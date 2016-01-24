@@ -23,7 +23,7 @@
 </div>
 
 <aside>
-	<h2><a href="/">{{ site.name }}</a><a href="/feed.xml" class="feed-link" title="Subscribe"><img src="/image/RSS.png" alt="RSS feed" /></a>		<a href="https://github.com/{{ site.meta.author.github }}"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/image/github_72px.png" alt="Fork me on GitHub"></a></h2>
+	<h2><a href="/">{{ site.name }}</a><a href="/feed.xml" class="feed-link" title="Subscribe"><img src="/image/RSS.png" alt="RSS feed" /></a>		<a href="https://github.com/{{ site.meta.author.github }}"><img src="/image/github_72px.png" alt="Fork me on GitHub"></a></h2>
 	
 	<nav class="block">
 		<ul>
@@ -53,7 +53,7 @@
 	
 	{% if site.meta.author.github %}
 	<div>
-		<img src="/image/lovelife.jpg" alt="love life"></a>
+		<img style="position: absolute; left: 0; right: 0; border: 0" src="/image/lovelife.jpg" alt="love life"></a>
 	</div>
 	{% endif %}
 	
