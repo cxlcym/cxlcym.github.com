@@ -1,7 +1,7 @@
 *{box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
 html,body,h1,h2,h3,h4,h5,h6,ul,ol,li,p,form,dl,dt,dd,figure{margin:0; padding:0; border:0;}
 body{line-height:1.6em; font-family:Helvetica, Arial, sans-serif; color:#2a333c;}
-a{margin:0 2px; color:#2a333c; text-decoration:none;}
+a{margin:0 2px; color:#ffffff; text-decoration:none;}
 a:hover{text-decoration:underline;}
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{margin:0;}
 img{border:0;}

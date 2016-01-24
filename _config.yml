@@ -5,9 +5,9 @@ permalink: /posts/:title.html
 exclude:
   - README.md
 
-name: 阿曹的曹
+name: Jack Cao
 host: cxlcym.github.com
-desc: 有家咖啡馆叫阿曹的曹
+desc: 心中的标准决定了可能达成的上限.
 
 custom:
     category:

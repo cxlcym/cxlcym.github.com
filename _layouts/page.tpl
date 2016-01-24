@@ -23,7 +23,7 @@
 </div>
 
 <aside>
-	<h2><a href="/">{{ site.name }}</a><a href="/feed.xml" class="feed-link" title="Subscribe"><img src="/image/RSS.png" alt="RSS feed" /></a></h2>
+	<h2><a href="/">{{ site.name }}</a><a href="/feed.xml" class="feed-link" title="Subscribe"><img src="/image/RSS.png" alt="RSS feed" /></a>		<a href="https://github.com/{{ site.meta.author.github }}"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/image/github_72px.png" alt="Fork me on GitHub"></a></h2>
 	
 	<nav class="block">
 		<ul>
@@ -43,7 +43,7 @@
 			{% if site.meta.author.gravatar %}<img src="{{ site.meta.gravatar}}{{ site.meta.author.gravatar }}?s=48" />{% endif %}
 			<figcaption><strong>{{ site.meta.author.name }}</strong></figcaption>
 		</figure>
-		<p>爱咖啡，电影还有女人.</p>
+		<p>心中的标准决定了可能达成的上限.</p>
 	</div>
 	
 	<div class="block block-license">
@@ -52,8 +52,8 @@
 	</div>
 	
 	{% if site.meta.author.github %}
-	<div class="block block-fork">
-		<a href="https://github.com/{{ site.meta.author.github }}"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/image/github_72px.png" alt="Fork me on GitHub"></a>
+	<div>
+		<img src="/image/lovelife.jpg" alt="love life"></a>
 	</div>
 	{% endif %}
 	
