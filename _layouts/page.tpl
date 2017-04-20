@@ -91,7 +91,7 @@ site.TPL_SEARCH_TITLE = '#{0} / 搜索：#{1}';
 </script>
   <!--右言评论-->   
 <!-- UY BEGIN -->
-<div id="uyan_frame"></div>
+<div id="uyan_frame" style="width:50%"></div>
 <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1757957"></script>
 <!-- UY END -->
 </body>
