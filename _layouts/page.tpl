@@ -69,6 +69,7 @@
 {% endfor %}
 <script>
 site.URL_GOOGLE_API = '{{site.meta.gapi}}';
+    <!--discus评论闲置-->
 site.URL_DISCUS_COMMENT = '{{ site.meta.author.disqus }}' ? 'http://{{ site.meta.author.disqus }}.{{ site.meta.disqus }}' : '';
 
 site.VAR_SITE_NAME = '{{ site.name }}';
@@ -88,5 +89,10 @@ site.TPL_SEARCH_TITLE = '#{0} / 搜索：#{1}';
   })();
 
 </script>
+  <!--右言评论-->   
+<!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1757957"></script>
+<!-- UY END -->
 </body>
 </html>
