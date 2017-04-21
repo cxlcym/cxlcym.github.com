@@ -91,7 +91,9 @@ site.TPL_SEARCH_TITLE = '#{0} / 搜索：#{1}';
 </script>
   <!--网易云跟帖class="comments"-->   
 <!-- 网易云跟帖-->
-<div id="disqus_thread" class="comments"></div>
+<div id="disqus_thread" class="comments">
+
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
 <script>
 var cloudTieConfig = {
@@ -102,8 +104,9 @@ var cloudTieConfig = {
 };
 var yunManualLoad = true;
 Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
-</script>  
-    
+</script>
+
+</div>  
 
 <!-- UY END -->
 </body>
