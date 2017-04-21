@@ -105,25 +105,7 @@ site.TPL_SEARCH_TITLE = '#{0} / 搜索：#{1}';
   })();
 
 </script>
-  <!--网易云跟帖class="comments"-->   
-<!-- 网易云跟帖-->
-<div id="disqus_thread" class="comments">
+ 
 
-<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-<script>
-var cloudTieConfig = {
-  url: document.location.href, 
-  sourceId: "",
-  productKey: "425ddc3506af4a3bad2b976ab4d1b339",
-  target: "cloud-tie-wrapper"
-};
-var yunManualLoad = true;
-Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
-</script>
-
-</div>  
-
-<!-- UY END -->
 </body>
 </html>
