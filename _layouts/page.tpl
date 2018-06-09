@@ -62,6 +62,7 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
 		</figure>
 		<p>厚积薄发</p>
         <p>心中的标准决定了可能达成的上限</p>
+	<p>Find me：cxlcym@gmail.com</p>
 	</div>
 	
 	<div class="block block-license">
