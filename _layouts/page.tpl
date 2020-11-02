@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2Y23PY4BS6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2Y23PY4BS6');
+</script>
+
 <meta charset="utf-8" />
 <meta name="author" content="{{ site.meta.author.name }}" />
 <meta name="keywords" content="{{ page.tags | join: ',' }}" />
@@ -20,21 +31,7 @@
 	<footer>
 		<p>&copy; Since 2013 Jack Cao V1.0</p>
 	</footer>
-	<!-- 网易云跟贴 -->
 
-    <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-<script>
-var cloudTieConfig = {
-  url: document.location.href, 
-  sourceId: "",
-  productKey: "425ddc3506af4a3bad2b976ab4d1b339",
-  target: "cloud-tie-wrapper"
-};
-var yunManualLoad = true;
-Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
-</script> 
-        <!-- 网易云跟贴 -->
 
 </div>
 
@@ -96,7 +93,7 @@ site.TPL_SEARCH_TITLE = '#{0} / 搜索：#{1}';
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-38806305-1']);
+  _gaq.push(['_setAccount', 'G-2Y23PY4BS6']);
   _gaq.push(['_trackPageview']);
 
   (function() {
