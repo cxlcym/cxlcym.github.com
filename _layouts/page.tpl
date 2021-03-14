@@ -84,7 +84,7 @@
 <script>
 site.URL_GOOGLE_API = '{{site.meta.gapi}}';
     <!--discus评论闲置-->
-site.URL_DISCUS_COMMENT = '{{ site.meta.author.disqus }}' ? 'http://{{ site.meta.author.disqus }}.{{ site.meta.disqus }}' : '';
+site.URL_DISCUS_COMMENT = 'https://cxlcym.disqus.com/embed.js';
 
 site.VAR_SITE_NAME = '{{ site.name }}';
 site.VAR_GOOGLE_CUSTOM_SEARCH_ID = '{{ site.meta.author.gcse }}';
