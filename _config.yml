@@ -28,6 +28,6 @@ meta:
         github: cxlcym                              # GitHub账号
         gravatar: e1235ae56900647c5ec6b73c9a8d9e30  # Gravatar头像标识
 
-    disqus: https://cxlcym.disqus.com/embed.js    # Disqus评论的JS地址
+    disqus: disqus.com/embed.js    # Disqus评论的JS地址
     gapi: http://www.google.com/jsapi               # Google API地址
     gravatar: http://en.gravatar.com/avatar/        # Gravatar头像服务器地址
