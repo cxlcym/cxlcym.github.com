@@ -21,13 +21,13 @@ custom:
         title: Another 
 meta:
     author:
-        name: Cao xilong
+        name: Jack Cao
         email: cxlcym@gmail.com
-        disqus: 1757957                              # Disqus缩略标识
+        disqus: cxlcym                              # Disqus缩略标识
         gcse: 008234092874476365914:ygzovwyok10     # Google自定义搜索标识ID
         github: cxlcym                              # GitHub账号
         gravatar: e1235ae56900647c5ec6b73c9a8d9e30  # Gravatar头像标识
 
-    disqus: http://v2.uyan.cc/code/uyan.js    # Disqus评论的JS地址
+    disqus: https://cxlcym.disqus.com/embed.js    # Disqus评论的JS地址
     gapi: http://www.google.com/jsapi               # Google API地址
     gravatar: http://en.gravatar.com/avatar/        # Gravatar头像服务器地址
