@@ -83,7 +83,6 @@
 {% endfor %}
 <script>
 site.URL_GOOGLE_API = '{{site.meta.gapi}}';
-    <!--discus评论闲置-->
 site.URL_DISCUS_COMMENT = '{{ site.meta.author.disqus }}' ? 'http://{{ site.meta.author.disqus }}.{{ site.meta.disqus }}' : '';
 
 site.VAR_SITE_NAME = '{{ site.name }}';
