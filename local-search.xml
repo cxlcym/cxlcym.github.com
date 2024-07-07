@@ -4,19 +4,6 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/cxlcym/cxlcym.github.io/2024/07/06/hello-world/"/>
-    <url>/cxlcym/cxlcym.github.io/2024/07/06/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>RIME + 雾凇拼音+个人词库，个人输入法搭建极简指南</title>
     <link href="/cxlcym/cxlcym.github.io/2024/07/04/RIME%20+%20%E9%9B%BE%E5%87%87%E6%8B%BC%E9%9F%B3+%E4%B8%AA%E4%BA%BA%E8%AF%8D%E5%BA%93%EF%BC%8C%E4%B8%AA%E4%BA%BA%E8%BE%93%E5%85%A5%E6%B3%95%E6%90%AD%E5%BB%BA%E6%9E%81%E7%AE%80%E6%8C%87%E5%8D%97/"/>
     <url>/cxlcym/cxlcym.github.io/2024/07/04/RIME%20+%20%E9%9B%BE%E5%87%87%E6%8B%BC%E9%9F%B3+%E4%B8%AA%E4%BA%BA%E8%AF%8D%E5%BA%93%EF%BC%8C%E4%B8%AA%E4%BA%BA%E8%BE%93%E5%85%A5%E6%B3%95%E6%90%AD%E5%BB%BA%E6%9E%81%E7%AE%80%E6%8C%87%E5%8D%97/</url>
