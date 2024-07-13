@@ -54,7 +54,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"cxlcym.github.io","root":"/","version":"1.9.7","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":20},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":"measurement_id:251339193","woyaola":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"cxlcym.github.io","root":"/","version":"1.9.7","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":20},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"f59ad063f8c993e1856f7d30e88080a7","google":{"measurement_id":"G-2Y23PY4BS6"},"woyaola":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -66,18 +66,31 @@
   
 
   
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?f59ad063f8c993e1856f7d30e88080a7";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
 
   
     <!-- Google tag (gtag.js) -->
     <script async>
       if (!Fluid.ctx.dnt) {
-        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=G-2Y23PY4BS6", function() {
           window.dataLayer = window.dataLayer || [];
           function gtag() {
             dataLayer.push(arguments);
           }
           gtag('js', new Date());
-          gtag('config', '');
+          gtag('config', 'G-2Y23PY4BS6');
         });
       }
     </script>
@@ -475,7 +488,7 @@
       
         <a href="/categories/%E5%A4%8D%E5%88%A9/" class="category-count col-2 col-md-1 col-xm-1">
           <i class="iconfont icon-articles"></i>
-          <span>4</span>
+          <span>3</span>
         </a>
       
       <div class="category-collapse collapse " id="collapse-a32d629c1a1acaac3fa04a7d6a21bc4e"
@@ -507,15 +520,6 @@
       
       
         <a href="/2021/03/04/%E6%99%AE%E9%80%9A%E4%BA%BA%E4%BB%8A%E5%B9%B4%E5%BA%94%E8%AF%A5%E9%85%8D%E7%BD%AE%E4%BB%80%E4%B9%88%E8%B5%84%E4%BA%A7%20/" title="普通人今年应该配置什么资产"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">普通人今年应该配置什么资产</span>
-        </a>
-      
-    
-      
-      
-        <a href="/2021/02/21/%E6%99%AE%E9%80%9A%E4%BA%BA%E4%BB%8A%E5%B9%B4%E5%BA%94%E8%AF%A5%E9%85%8D%E7%BD%AE%E4%BB%80%E4%B9%88%E8%B5%84%E4%BA%A7/" title="普通人今年应该配置什么资产"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">普通人今年应该配置什么资产</span>

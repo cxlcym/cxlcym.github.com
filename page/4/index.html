@@ -54,7 +54,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"cxlcym.github.io","root":"/","version":"1.9.7","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":20},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":"measurement_id:251339193","woyaola":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"cxlcym.github.io","root":"/","version":"1.9.7","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":20},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"f59ad063f8c993e1856f7d30e88080a7","google":{"measurement_id":"G-2Y23PY4BS6"},"woyaola":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -66,18 +66,31 @@
   
 
   
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?f59ad063f8c993e1856f7d30e88080a7";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
 
   
     <!-- Google tag (gtag.js) -->
     <script async>
       if (!Fluid.ctx.dnt) {
-        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=G-2Y23PY4BS6", function() {
           window.dataLayer = window.dataLayer || [];
           function gtag() {
             dataLayer.push(arguments);
           }
           gtag('js', new Date());
-          gtag('config', '');
+          gtag('config', 'G-2Y23PY4BS6');
         });
       }
     </script>
@@ -240,69 +253,6 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2013/07/15/%E4%BD%A0%E8%A6%81%E5%A5%BD%E5%A5%BD%E6%B4%BB%E7%9D%80%EF%BC%8C%E6%88%91%E8%A6%81%E5%A5%BD%E5%A5%BD%E6%B4%BB%E7%9D%80/" target="_self">
-          你要好好活着，我要好好活着
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2013/07/15/%E4%BD%A0%E8%A6%81%E5%A5%BD%E5%A5%BD%E6%B4%BB%E7%9D%80%EF%BC%8C%E6%88%91%E8%A6%81%E5%A5%BD%E5%A5%BD%E6%B4%BB%E7%9D%80/" target="_self">
-        <div>
-          2013年，你21岁，我不知道是不是你最帅的时候，但一定是你未来的日子里最年轻的时候。 现在的你喜欢电影，咖啡，女人。 你读的书不多，多半读的都是一些乱七八糟的书，以致于文章写的很没有水平，作为一个汉语言专业的学生，你在将来务必要修正这一点，起码得把四大名著的原版看完了。不过也不用太着急，因为前半段是你的父母对你现在写的一些渣渣日志的指点，我要对你说，那些乱七八糟的书还是不能少看，正是乱才能凸显你
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2013-07-15 08:00" pubdate>
-              2013-07-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%88%90%E9%95%BF/" class="category-chain-item">成长</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%92%96%E5%95%A1/">#咖啡</a>
-            
-              <a href="/tags/%E8%87%AA%E6%88%91%E6%84%8F%E8%AF%86/">#自我意识</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
 
   <div class="row mx-auto index-card">
     
@@ -864,6 +814,69 @@
               <a href="/tags/%E6%A0%A1%E5%9B%AD%E7%94%9F%E6%B4%BB/">#校园生活</a>
             
               <a href="/tags/%E5%B9%B4%E8%BD%BB%E4%BA%BA/">#年轻人</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2013/03/07/%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%80%E5%B0%8F%E6%AD%A5/" target="_self">
+          第一个一小步
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2013/03/07/%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%B8%80%E5%B0%8F%E6%AD%A5/" target="_self">
+        <div>
+          首先恭喜我自己在个人的超级大目标迈出了一小步，2.28至3.17日除去中间歇掉的3天，和我预期的基本一样，15天，（预期中没有歇掉的3天…）学习完成了《LPTHW》中的所有习题，非常出色的坚持下来啦~~虽然结尾的这几课比较牵强，但自己还是要鼓励一下自己嘛。因为最后的几课感觉突然一下子提高了好多，看不懂的扫一遍就过，我是菜鸟中的菜鸟嘛，继续努力坚持！每个人都是某一方面的菜鸟，不是吗？用结尾作者的话再
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2013-03-07 08:00" pubdate>
+              2013-03-07
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%88%90%E9%95%BF/" class="category-chain-item">成长</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E4%BA%BA%E7%94%9F%E7%9B%AE%E6%A0%87/">#人生目标</a>
+            
+              <a href="/tags/python/">#python</a>
             
           </div>
         

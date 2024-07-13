@@ -54,7 +54,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"cxlcym.github.io","root":"/","version":"1.9.7","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":20},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":"measurement_id:251339193","woyaola":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"cxlcym.github.io","root":"/","version":"1.9.7","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":20},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"f59ad063f8c993e1856f7d30e88080a7","google":{"measurement_id":"G-2Y23PY4BS6"},"woyaola":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -66,18 +66,31 @@
   
 
   
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?f59ad063f8c993e1856f7d30e88080a7";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
 
   
     <!-- Google tag (gtag.js) -->
     <script async>
       if (!Fluid.ctx.dnt) {
-        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=G-2Y23PY4BS6", function() {
           window.dataLayer = window.dataLayer || [];
           function gtag() {
             dataLayer.push(arguments);
           }
           gtag('js', new Date());
-          gtag('config', '');
+          gtag('config', 'G-2Y23PY4BS6');
         });
       }
     </script>
@@ -631,73 +644,6 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2021/02/21/%E6%99%AE%E9%80%9A%E4%BA%BA%E4%BB%8A%E5%B9%B4%E5%BA%94%E8%AF%A5%E9%85%8D%E7%BD%AE%E4%BB%80%E4%B9%88%E8%B5%84%E4%BA%A7/" target="_self">
-          普通人今年应该配置什么资产
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2021/02/21/%E6%99%AE%E9%80%9A%E4%BA%BA%E4%BB%8A%E5%B9%B4%E5%BA%94%E8%AF%A5%E9%85%8D%E7%BD%AE%E4%BB%80%E4%B9%88%E8%B5%84%E4%BA%A7/" target="_self">
-        <div>
-          你是不是觉得周围的东西越来越贵了，早些年还能买到 3 块 5 的 [大白兔]，可今天已经逼近 10块钱一袋了。 是的，什么东西都在涨价，除了普通人的劳动和收入。 这徒增的5块钱对于我这种普通人来说，不能叫做消费升级，而是生活的压力，或者说，这叫我的钱缩水了。 国际货币基金组织 (IMF) 在最新一期 《世界经济展望报告》 中预计，2020 年全球经济萎缩 4.4%，是上世纪 30 年代大萧条以来最
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-21 08:00" pubdate>
-              2021-02-21
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%A4%8D%E5%88%A9/" class="category-chain-item">复利</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E7%90%86%E8%B4%A2/">#理财</a>
-            
-              <a href="/tags/%E5%A4%8D%E5%88%A9/">#复利</a>
-            
-              <a href="/tags/%E5%9F%BA%E9%87%91/">#基金</a>
-            
-              <a href="/tags/%E8%82%A1%E7%A5%A8/">#股票</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
         <a href="/2020/11/01/%E6%8A%BD%E8%B1%A1%E8%83%BD%E5%8A%9B%E6%9C%89%E6%84%9F/" target="_self">
           抽象能力有感
         </a>
@@ -874,6 +820,69 @@
               <a href="/tags/%E5%B7%A5%E4%BD%9C/">#工作</a>
             
               <a href="/tags/%E6%97%A5%E5%B8%B8/">#日常</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2019/02/10/2018%E5%B9%B4%E5%BA%A6%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/" target="_self">
+          2018年度个人总结
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2019/02/10/2018%E5%B9%B4%E5%BA%A6%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/" target="_self">
+        <div>
+          2018年，反复回味和总结后，脑海中一个词怎么也绕不过去。—Complicated 1.Complicated无论是家庭、感情、生活和工作，本年度出现的复杂程度均远超出了过去每年的均值。出现这种情况，我更希望归因为是自我的理解程度或者说是自我的认知有了进步，更或者就是“人间岁月催人老”的这种说法，时间迟早会逼你承受一切。那些日常的工作中经常出现过的复杂问题的处理经验倒帮了我，很多问题都能快速看到本
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-02-10 08:00" pubdate>
+              2019-02-10
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%88%90%E9%95%BF/" class="category-chain-item">成长</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">#年度总结</a>
+            
+              <a href="/tags/%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/">#个人感悟</a>
             
           </div>
         
