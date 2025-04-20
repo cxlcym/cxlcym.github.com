@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>LLaMA-Factory微调DeepseekR1排坑</title>
+    <link href="/2025/04/20/LLaMA-Factory%E5%BE%AE%E8%B0%83DeepseekR1%E6%8E%92%E5%9D%91/"/>
+    <url>/2025/04/20/LLaMA-Factory%E5%BE%AE%E8%B0%83DeepseekR1%E6%8E%92%E5%9D%91/</url>
+    
+    <content type="html"><![CDATA[<h4 id="官方文档主流程"><a href="#官方文档主流程" class="headerlink" title="官方文档主流程"></a>官方文档主流程</h4><blockquote><p><strong>LLaMA-Factory Doc 官方文档</strong><br><a href="https://llamafactory.readthedocs.io/zh-cn/latest/">https://llamafactory.readthedocs.io/zh-cn/latest/</a></p></blockquote><h4 id="本地机器配置"><a href="#本地机器配置" class="headerlink" title="本地机器配置"></a>本地机器配置</h4><blockquote><p>OS : WIN11 专业版 24H2<br>CPU : Intel(R) Core(TM) i5-14600KF<br>GPU : 4070TI S (16G)<br>RAM : 32G</p></blockquote><h4 id="0-基础环境大坑注意："><a href="#0-基础环境大坑注意：" class="headerlink" title="0.基础环境大坑注意："></a>0.基础环境大坑注意：</h4><p>(1).CUDA 与 Pytorch 的版本对应；<br>(2).CUDA 与 bitsandbytes 的版本对应；<br>(3).如果最后 LLaMA-Factory 启动后主界面右下角的损失图没有出来，要检查xformers的版本；<br>(4).Win环境下上启用量化 LoRA ，需要安装CUDA 版本选择适当的 <a href="https://github.com/jllllll/bitsandbytes-windows-webui/releases/tag/wheels/">bitsandbytes</a> 发行版本。</p><p>经过大量捯饬，CUDA12.6，Pytorch2.6，xformers3个需要逐一对应，对应版本如下安装：</p><blockquote><p><a href="https://developer.nvidia.com/cuda-12-6-0-download-archive?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_local%22%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80%22">CUDA12.6</a><br>完成安装后，可以通过使用 CMD 输入 <code>nvcc -V</code> 来快速校验安装是否成功</p></blockquote><blockquote><p><strong>Pytorch2.6</strong><br><code>pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126</code></p></blockquote><blockquote><p><strong>xformers</strong><br><code>pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu126</code></p></blockquote><blockquote><p><strong>Bitsandbytes</strong><br><code>pip install --upgrade &quot;bitsandbytes&gt;=0.45.0&quot;</code><br>运行中如果报错提示 bitsandbytes 的版本问题，那么就是版本不对，稳妥一些 CUDA 12.6 对应 0.43 以上版本(官方提示)，本次直接 0.45</p></blockquote><h4 id="1-开始安装"><a href="#1-开始安装" class="headerlink" title="1.开始安装"></a>1.开始安装</h4><blockquote><p>创建一个新环境<br><code>conda activate llama_factory</code></p></blockquote><blockquote><p>克隆仓库<br><code>git clone --depth 1 https://github.com/hiyouga/LLaMA-Factory.git </code></p></blockquote><blockquote><p>移步下载路径<br><code>cd LLaMA-Factory</code></p></blockquote><blockquote><p>安装仓库内安装 LLaMA-Factory 及其依赖<br><code>pip install -e &quot;.[torch,metrics]&quot;</code></p></blockquote><p>完成安装后，可以通过使用 CMD 输入 <code>llamafactory-cli version</code> 来快速校验安装是否成功</p><h4 id="2-运行"><a href="#2-运行" class="headerlink" title="2.运行"></a>2.运行</h4><h5 id="2-1-启动Web-UI界面"><a href="#2-1-启动Web-UI界面" class="headerlink" title="2.1 启动Web UI界面"></a>2.1 启动Web UI界面</h5><p><code>llamafactory-cli webui</code></p><h5 id="2-2-挂载模型"><a href="#2-2-挂载模型" class="headerlink" title="2.2 挂载模型"></a>2.2 挂载模型</h5><p>挂载本地下载好的模型或者抱脸在线都行，可视化界面直接操作。<br>我本地是 DeepSeek-R1-7B-DIstill 核心目标是先跑起来，一个文科生，轮子转起来就行。</p><h5 id="2-3-参数调整"><a href="#2-3-参数调整" class="headerlink" title="2.3 参数调整"></a>2.3 参数调整</h5><p>这里还在摸索研究中，本次不进行阐述。</p><h4 id="3-数据处理"><a href="#3-数据处理" class="headerlink" title="3.数据处理"></a>3.数据处理</h4><p>llamafactory 支持 <a href="https://llamafactory.readthedocs.io/zh-cn/latest/getting_started/data_preparation.html#alpaca">Alpaca</a> 格式和 <a href="https://llamafactory.readthedocs.io/zh-cn/latest/getting_started/data_preparation.html#sharegpt">ShareGPT</a> 格式的数据集，在data目录下的 dataset_info.json 可以挂载自定义的 json 数据集。</p><p>我是搞的 <a href="https://huggingface.co/datasets/FreedomIntelligence/medical-o1-reasoning-SFT">FreedomIntelligence&#x2F;medical-o1-reasoning-SFT</a>推理数据集，按照 dataset_info.json 里的数据集提示，自定义一个 medical__Chinese_demo ，以 columns 进行映射对应字段，关键是这个数据集里还有思维链Complex_CoT，先加 query 这里，感觉还是不太合适。</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-string">&quot;medical__Chinese_demo&quot;</span>: &#123;  <br>  <span class="hljs-string">&quot;file_name&quot;</span>: <span class="hljs-string">&quot;路径<span class="hljs-subst">\\</span>medical_o1_sft_Chinese.json&quot;</span>,  <br>  <span class="hljs-string">&quot;columns&quot;</span>: &#123;  <br>    <span class="hljs-string">&quot;prompt&quot;</span>: <span class="hljs-string">&quot;Question&quot;</span>,  <br>    <span class="hljs-string">&quot;query&quot;</span>: <span class="hljs-string">&quot;Complex_CoT&quot;</span>,  <br>    <span class="hljs-string">&quot;response&quot;</span>: <span class="hljs-string">&quot;Response&quot;</span>  <br>    &#125;<br></code></pre></td></tr></table></figure><blockquote><p>这里有篇官方教程 <a href="https://gallery.pai-ml.com/#/preview/deepLearning/nlp/llama_factory_deepseek_r1_distill_7b">LLaMA Factory：微调DeepSeek-R1-Distill-Qwen-7B模型实现新闻标题分类器</a>各位也可以一并参考。</p></blockquote><h4 id="4-微调训练"><a href="#4-微调训练" class="headerlink" title="4.微调训练"></a>4.微调训练</h4><p>如果显示和下图一样，那就是开始正常训练了，至少排完了训练之前的一些坑，至于训练参数和其他，先研究研究。</p><p><img src="/img/006LLaMA.png"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>奇淫巧技</tag>
+      
+      <tag>工作</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Word/Excel 批量文本脱敏处理</title>
     <link href="/2024/09/07/WordExcel%E6%89%B9%E9%87%8F%E6%96%87%E6%9C%AC%E8%84%B1%E6%95%8F%E5%A4%84%E7%90%86/"/>
     <url>/2024/09/07/WordExcel%E6%89%B9%E9%87%8F%E6%96%87%E6%9C%AC%E8%84%B1%E6%95%8F%E5%A4%84%E7%90%86/</url>

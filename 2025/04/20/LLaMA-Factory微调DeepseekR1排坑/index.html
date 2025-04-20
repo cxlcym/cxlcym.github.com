@@ -1,0 +1,761 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="JcakCao">
+  <meta name="keywords" content="jackcao,杰克曹，">
+  
+    <meta name="description" content="官方文档主流程 LLaMA-Factory Doc 官方文档https://llamafactory.readthedocs.io/zh-cn/latest/  本地机器配置 OS : WIN11 专业版 24H2CPU : Intel(R) Core(TM) i5-14600KFGPU : 4070TI S (16G)RAM : 32G  0.基础环境大坑注意：(1).CUDA 与 Pytorc">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>LLaMA-Factory微调DeepseekR1排坑 - NowOrNever</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"cxlcym.github.io","root":"/","version":"1.9.7","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":20},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"f59ad063f8c993e1856f7d30e88080a7","google":"G-2Y23PY4BS6","woyaola":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?f59ad063f8c993e1856f7d30e88080a7";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Now or Never</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">LLaMA-Factory微调DeepseekR1排坑</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-04-20 19:00" pubdate>
+          2025年4月20日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          639 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          6 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">LLaMA-Factory微调DeepseekR1排坑</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h4 id="官方文档主流程"><a href="#官方文档主流程" class="headerlink" title="官方文档主流程"></a>官方文档主流程</h4><blockquote>
+<p><strong>LLaMA-Factory Doc 官方文档</strong><br><a target="_blank" rel="noopener" href="https://llamafactory.readthedocs.io/zh-cn/latest/">https://llamafactory.readthedocs.io/zh-cn/latest/</a></p>
+</blockquote>
+<h4 id="本地机器配置"><a href="#本地机器配置" class="headerlink" title="本地机器配置"></a>本地机器配置</h4><blockquote>
+<p>OS : WIN11 专业版 24H2<br>CPU : Intel(R) Core(TM) i5-14600KF<br>GPU : 4070TI S (16G)<br>RAM : 32G</p>
+</blockquote>
+<h4 id="0-基础环境大坑注意："><a href="#0-基础环境大坑注意：" class="headerlink" title="0.基础环境大坑注意："></a>0.基础环境大坑注意：</h4><p>(1).CUDA 与 Pytorch 的版本对应；<br>(2).CUDA 与 bitsandbytes 的版本对应；<br>(3).如果最后 LLaMA-Factory 启动后主界面右下角的损失图没有出来，要检查xformers的版本；<br>(4).Win环境下上启用量化 LoRA ，需要安装CUDA 版本选择适当的 <a target="_blank" rel="noopener" href="https://github.com/jllllll/bitsandbytes-windows-webui/releases/tag/wheels/">bitsandbytes</a> 发行版本。</p>
+<p>经过大量捯饬，CUDA12.6，Pytorch2.6，xformers3个需要逐一对应，对应版本如下安装：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-12-6-0-download-archive?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_local%22%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80%22">CUDA12.6</a><br>完成安装后，可以通过使用 CMD 输入 <code>nvcc -V</code> 来快速校验安装是否成功</p>
+</blockquote>
+<blockquote>
+<p><strong>Pytorch2.6</strong><br><code>pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126</code></p>
+</blockquote>
+<blockquote>
+<p><strong>xformers</strong><br><code>pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu126</code></p>
+</blockquote>
+<blockquote>
+<p><strong>Bitsandbytes</strong><br><code>pip install --upgrade &quot;bitsandbytes&gt;=0.45.0&quot;</code><br>运行中如果报错提示 bitsandbytes 的版本问题，那么就是版本不对，稳妥一些 CUDA 12.6 对应 0.43 以上版本(官方提示)，本次直接 0.45</p>
+</blockquote>
+<h4 id="1-开始安装"><a href="#1-开始安装" class="headerlink" title="1.开始安装"></a>1.开始安装</h4><blockquote>
+<p>创建一个新环境<br><code>conda activate llama_factory</code></p>
+</blockquote>
+<blockquote>
+<p>克隆仓库<br><code>git clone --depth 1 https://github.com/hiyouga/LLaMA-Factory.git </code></p>
+</blockquote>
+<blockquote>
+<p>移步下载路径<br><code>cd LLaMA-Factory</code></p>
+</blockquote>
+<blockquote>
+<p>安装仓库内安装 LLaMA-Factory 及其依赖<br><code>pip install -e &quot;.[torch,metrics]&quot;</code></p>
+</blockquote>
+<p>完成安装后，可以通过使用 CMD 输入 <code>llamafactory-cli version</code> 来快速校验安装是否成功</p>
+<h4 id="2-运行"><a href="#2-运行" class="headerlink" title="2.运行"></a>2.运行</h4><h5 id="2-1-启动Web-UI界面"><a href="#2-1-启动Web-UI界面" class="headerlink" title="2.1 启动Web UI界面"></a>2.1 启动Web UI界面</h5><p><code>llamafactory-cli webui</code></p>
+<h5 id="2-2-挂载模型"><a href="#2-2-挂载模型" class="headerlink" title="2.2 挂载模型"></a>2.2 挂载模型</h5><p>挂载本地下载好的模型或者抱脸在线都行，可视化界面直接操作。<br>我本地是 DeepSeek-R1-7B-DIstill 核心目标是先跑起来，一个文科生，轮子转起来就行。</p>
+<h5 id="2-3-参数调整"><a href="#2-3-参数调整" class="headerlink" title="2.3 参数调整"></a>2.3 参数调整</h5><p>这里还在摸索研究中，本次不进行阐述。</p>
+<h4 id="3-数据处理"><a href="#3-数据处理" class="headerlink" title="3.数据处理"></a>3.数据处理</h4><p>llamafactory 支持 <a target="_blank" rel="noopener" href="https://llamafactory.readthedocs.io/zh-cn/latest/getting_started/data_preparation.html#alpaca">Alpaca</a> 格式和 <a target="_blank" rel="noopener" href="https://llamafactory.readthedocs.io/zh-cn/latest/getting_started/data_preparation.html#sharegpt">ShareGPT</a> 格式的数据集，在data目录下的 dataset_info.json 可以挂载自定义的 json 数据集。</p>
+<p>我是搞的 <a target="_blank" rel="noopener" href="https://huggingface.co/datasets/FreedomIntelligence/medical-o1-reasoning-SFT">FreedomIntelligence&#x2F;medical-o1-reasoning-SFT</a>推理数据集，按照 dataset_info.json 里的数据集提示，自定义一个 medical__Chinese_demo ，以 columns 进行映射对应字段，关键是这个数据集里还有思维链Complex_CoT，先加 query 这里，感觉还是不太合适。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-string">&quot;medical__Chinese_demo&quot;</span>: &#123;  <br>  <span class="hljs-string">&quot;file_name&quot;</span>: <span class="hljs-string">&quot;路径<span class="hljs-subst">\\</span>medical_o1_sft_Chinese.json&quot;</span>,  <br>  <span class="hljs-string">&quot;columns&quot;</span>: &#123;  <br>    <span class="hljs-string">&quot;prompt&quot;</span>: <span class="hljs-string">&quot;Question&quot;</span>,  <br>    <span class="hljs-string">&quot;query&quot;</span>: <span class="hljs-string">&quot;Complex_CoT&quot;</span>,  <br>    <span class="hljs-string">&quot;response&quot;</span>: <span class="hljs-string">&quot;Response&quot;</span>  <br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这里有篇官方教程 <a target="_blank" rel="noopener" href="https://gallery.pai-ml.com/#/preview/deepLearning/nlp/llama_factory_deepseek_r1_distill_7b">LLaMA Factory：微调DeepSeek-R1-Distill-Qwen-7B模型实现新闻标题分类器</a>各位也可以一并参考。</p>
+</blockquote>
+<h4 id="4-微调训练"><a href="#4-微调训练" class="headerlink" title="4.微调训练"></a>4.微调训练</h4><p>如果显示和下图一样，那就是开始正常训练了，至少排完了训练之前的一些坑，至于训练参数和其他，先研究研究。</p>
+<p><img src="/img/006LLaMA.png" srcset="/img/loading.gif" lazyload></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF/" class="category-chain-item">技术</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%A5%87%E6%B7%AB%E5%B7%A7%E6%8A%80/" class="print-no-link">#奇淫巧技</a>
+      
+        <a href="/tags/%E5%B7%A5%E4%BD%9C/" class="print-no-link">#工作</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>LLaMA-Factory微调DeepseekR1排坑</div>
+      <div>https://cxlcym.github.io/2025/04/20/LLaMA-Factory微调DeepseekR1排坑/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>JcakCao</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025年4月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/09/07/WordExcel%E6%89%B9%E9%87%8F%E6%96%87%E6%9C%AC%E8%84%B1%E6%95%8F%E5%A4%84%E7%90%86/" title="Word/Excel 批量文本脱敏处理">
+                        <span class="hidden-mobile">Word/Excel 批量文本脱敏处理</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="SOHUCS" sid='https://cxlcym.github.io/2025/04/20/LLaMA-Factory%E5%BE%AE%E8%B0%83DeepseekR1%E6%8E%92%E5%9D%91/'></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#SOHUCS', function() {
+      Fluid.utils.createScript("https://changyan.sohu.com/upload/changyan.js", function() {
+        window.changyan.api.config({"appid":"cyxnLdo7p","appkey":"prod_543c9bc1293d3dacdaa3d2ed3a9a1153"})
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <span> ©2012-2024 Power By:Jack Cao</span> <br> <span>  Base on </span> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span> Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
